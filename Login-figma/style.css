@@ -1,0 +1,111 @@
+:root{
+    --lightText: #E5E5E5;
+    --darkText: #224957;
+    --green: #20DF7F;
+    --darkTheme: #093545;
+    --lightTheme: #E5E5E5;
+}
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: var(--darkTheme);
+    position: relative;
+    height: 100vh;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+h1, p{
+    color: var(--lightText);
+}
+.conatiner{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    z-index: 0;
+}
+
+.form-container{
+    width: max-content;
+    display: block;
+    text-align: center;
+    line-height: 2rem;
+    margin: auto;
+}
+.loginForm input{
+    display: block;
+    margin: auto;
+    margin-top: 1rem;
+}
+.loginForm input:focus{
+    border: 1px solid var(--green);
+}
+.loginForm input[type="email"], input[type="password"], input[type="submit"]{
+    width: 85%;
+    padding: 0.8rem 1rem;
+    font-size: medium;
+    border: none;
+    border-radius: 3% 3% 3% 3% / 13% 19% 13% 16% ;
+}
+.loginForm input[type="submit"]{
+    width: 95%;
+    background-color: var(--green);
+    font-size: large;
+    color: var(--lightText);
+    box-shadow: -1px 5px 3px 0px rgba(27, 27, 27, 0.75);
+}
+.loginForm input[type="email"], input[type="password"], input[type="email"]::placeholder, input[type="password"]::placeholder{
+    background-color: #224957;
+    color: #fff;
+}
+
+.rememberCheck, .forgotPass{
+    display: inline-block;
+}
+
+.loginExtraFunc{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+input[type="checkbox"]{
+    display: inline-grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before{
+    content:"";
+    width: 1.2rem;
+    height: 1.2rem;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    border-radius:7% 8% 9% 8% / 8% 9% 9% 8% ;
+    box-shadow: inset 1.5em 1.5em #224957;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(0.8);
+}
+
+
+.rememberCheck > label{
+    color: var(--lightText);
+}
+
+.forgotPass > a{
+    color: var(--green);
+    font-weight: 400;
+}
+
+.forgotPass> a:hover, input[type="checkbox"]:hover, input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+.svgwave{
+    position: absolute;
+    width: -webkit-fill-available;
+    bottom: 0;   
+    z-index: 1;
+}
